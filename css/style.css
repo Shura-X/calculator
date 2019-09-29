@@ -1,0 +1,102 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+div:hover:not(.prompt) {
+  box-shadow: inset 0 0 0 1px #FFA800;
+}
+
+.prompt {
+  border-bottom: 1px solid #FFA800;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  font-size: 48px;
+  font-family: 'Roboto';
+  display: flex;
+  align-items: center;
+  padding: 0 70px;
+  overflow: auto;
+}
+
+div:not(.prompt) {
+  grid-row: span 1;
+  grid-column: span 1;
+  font-size: 48px;
+  font-family: 'Roboto';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.is {
+  grid-column-start: 4 !important;
+}
+
+sup {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.cancel {
+  color: #FFA800;
+}
+
+.is {
+  background-color: #FFA800;
+}
+
+@media screen and (max-width: 1200px) {
+  .prompt {
+    padding: 0 60px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  div:not(.prompt) {
+    font-size: 36px;
+  }
+  .prompt {
+    font-size: 36px;
+    padding: 0 50px;
+  }
+  sup {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .prompt {
+    padding: 0 35px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  div:not(.prompt) {
+    font-size: 24px;
+  }
+  .prompt {
+    padding: 0 25px;
+  }
+  sup {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .prompt {
+    padding: 0 10px;
+    font-size: 24px;
+  }
+}
